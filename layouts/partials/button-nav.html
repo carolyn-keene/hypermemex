@@ -1,0 +1,10 @@
+<div class="flex f__row data">
+    {{ $currentPage := . }}
+    {{ range sort .Site.Menus.main "Name" "desc" }}
+    {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+    <span class="nav__item button active" href="{{ .URL }}">{{ .Name|lower }}</span>
+    {{ else }}
+    <a class="nav__item button" href="{{ .URL }}">{{ .Name|lower }}</a>
+    {{ end }}
+    {{ end }}
+</div>

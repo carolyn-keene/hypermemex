@@ -1,0 +1,17 @@
+{{ define "article" }}
+
+<article class="data">
+    {{ .Content }}
+</article>
+<div class="flex f__container">
+    {{ partial "button-nav.html" . }}
+</div>
+<div class="flex f__container">
+    <div class="flex f__row">
+        {{ range (where .Site.Pages "Section" "notes") }}
+        {{ partial "flex-item.html" . }}
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

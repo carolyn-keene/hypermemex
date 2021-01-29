@@ -1,0 +1,17 @@
+{{ define "article" }}
+
+<div class="flex f__container">
+    {{ partial "button-nav.html" . }}
+</div>
+<article class="data">
+    {{ .Content }}
+</article>
+<div class="flex f__container">
+    <div class="flex f__col">
+        {{ range .Pages | shuffle }}
+            {{ partial "flex-item.html" . }}
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

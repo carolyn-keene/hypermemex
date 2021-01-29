@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="The HyperMemex protocol lets you create and share interlinked HyperText documents and new HyperMedia applications.">
+        <link rel="shortcut icon" href="{{ "img/folder32.png" | absURL }}">
+        <title>HyperMemex</title>
+        <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        <main aria-role="main" class="wrapper">
+            <header class="header flex f__row">
+                <a href="{{ .Site.BaseURL }}">
+                    <h1 id="banner">HyperMemex Systems</h1>
+                </a>
+                <p class="data">Welcome, user: <a href="/sudonym">sudonym</a>
+                </p>
+            </header>
+            {{- block "article" . }}{{- end }}
+            {{- block "footer" . }}
+        </main>
+        {{ partial "footer.html" . }}
+        {{- end }}
+        <div class="screen"></div>
+        <div class="screen-lat"></div>
+        <div class="lines"></div>
+
+    </body>
+
+</html>

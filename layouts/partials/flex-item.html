@@ -1,0 +1,15 @@
+<div class="flex f__item">
+    <div class="flex f__item__head">
+        <div class="left">
+                <a href="{{ .Params.uri | default .Permalink }}" class="data" rel="noreferrer noopener">{{ .Title }}</a>
+        </div>
+        <div class="right">
+            {{ range (.GetTerms "tags") }}
+            <a class="data" href="{{ .Permalink }}">#{{.LinkTitle}}</a>
+            {{ end }}
+        </div>
+    </div>
+    <article class="content">
+        {{ .Content | truncate 300 }}<a href="{{ .Permalink }}">[OPEN]</a>
+    </article>
+</div>

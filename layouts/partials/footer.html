@@ -1,0 +1,8 @@
+<footer>
+    <p class="data">HyperMemex Systems {{ now.Format "2006" }}</p>
+    {{ range .AlternativeOutputFormats -}}
+    <a href="{{ .Permalink }}" class="data">
+        {{.Name | lower }}
+    </a>
+    {{ end -}}
+</footer>

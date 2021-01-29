@@ -1,0 +1,280 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --zero: #c3cfa1;
+        --one: #8a956d;
+        --two: #4e533d;
+        --three: #36382f;
+        --four: #1f1f1f;
+        --shadow: var(--four) 3px 5px 0px;
+        --border: var(--four);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --zero: #36382f;
+        --one: #4e533d;
+        --two: #8a956d;
+        --three: #c3cfa1;
+        --four: #dad7cd;
+        --shadow: rgba(0, 0, 0, 0.5) 3px 5px 0px;
+        --border: rgba(0, 0, 0, 0.5);
+    }
+}
+
+:root {
+    --radius: 5px;
+}
+
+@font-face {
+    font-family: macintosh;
+    src: url(/font/mac.ttf);
+}
+
+* {
+    opacity: 0.95;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    background-color: var(--zero);
+    min-height: 100vh;
+    cursor: url(images/aero_arrow.png), auto;
+}
+
+body {
+    word-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--four);
+    position: relative;
+    min-height: 90vh;
+}
+
+main {
+    max-width: 47rem;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--four);
+}
+
+a:hover {
+    box-shadow: inset 0 -1.5em 0 0 var(--zero);
+    color: var(--four);
+}
+
+a:active {
+    color: var(--three);
+}
+
+p {
+    opacity: 1;
+}
+
+h1, h2 {
+    font-family: Macintosh, -apple-system, BlinkMacSystemFont, monospace;
+}
+
+h1#banner {
+    font-size: 2rem;
+    font-style: italic;
+    font-family: Macintosh, -apple-system, BlinkMacSystemFont, monospace;
+    margin-bottom: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.f__row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.f__col {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(33%, max-content)); 
+    gap: 10px;
+    /* flex-direction: column;
+    flex: 33%;
+    margin: 0.25rem;
+    justify-content: flex-start;
+    align-items: center; */
+}
+
+.f__item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: var(--one);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+    /* border: 2px solid var(--border); */
+}
+
+.f__item__head {
+    width: 100%;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.nav__item {
+    background-color: var(--one);
+    /* box-shadow: var(--shadow); */
+    padding: 0.5rem;
+    margin: 0 0.5rem 0 0;
+}
+
+.button {
+    min-width: 5rem;
+    text-align: center;
+    display: inline-block;
+    color: #eff6ec;
+    text-decoration: none;
+    cursor: pointer;
+    -moz-border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+    border-radius: var(--radius);
+    -moz-box-shadow: 2px var(--radius) 0 var(--border);
+    -webkit-box-shadow: 2px var(--radius) 0 var(--border);
+    box-shadow: 2px var(--radius) 0 var(--border);
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.button:hover, .active {
+    color: var(--two);
+    -moz-box-shadow: 1px 2px 0 var(--border);
+    -webkit-box-shadow: 1px 2px 0 var(--border);
+    box-shadow: 1px 2px 0 var(--border);
+    -moz-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px)
+}
+
+.data {
+    color: var(--two);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+@media all and (min-width: 460px) {
+    .data {
+        margin-left: auto;
+        margin-top: auto;
+    }
+}
+
+footer>.data {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.content {
+    max-width: 100%;
+}
+
+blockquote > p {
+    font-style: italic;
+    border-left: 3px solid var(--zero);
+    padding-left: 1rem;
+}
+
+pre {
+    padding: 1rem;
+    max-width: 100%;
+    background-color: var(--zero);
+    word-break: break-all;
+    overflow: hidden;
+}
+
+p>code, li>code {
+    border: 1px solid var(--four);
+    padding: 0.1rem 0.25rem;
+    max-width: 100%;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+@media all and (max-width: 460px) {
+    pre, code {
+        overflow-x: scroll;
+    }
+}
+
+.screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow-y: scroll;
+}
+
+.screen-lat {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(var(--four) 0px, var(--four) 1px, var(--zero) 2px, var(--zero) 3px);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Retro screen effect modified from https://codepen.io/Travisaurus-Rex */
+
+.lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(var(--three), var(--three) 2px, transparent 1px, transparent 300px);
+    background-position: 0% 0%;
+    background-size: 1px 360px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Keyframes eat CPU :((
+.slide {
+    transform: translate3d(0, 0, 0);
+	animation-name: slide;
+	animation-duration: 160s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes slide {
+	0% {
+		background-position-y: 0%;
+	}
+	100% {
+		background-position-y: 100%;
+	}
+} */
